@@ -42,22 +42,6 @@ class UserCreateInput {
 
   @ApiProperty({
     required: true,
-    type: String,
-  })
-  @IsString()
-  @Field(() => String)
-  username!: string;
-
-  @ApiProperty({
-    required: true,
-    type: String,
-  })
-  @IsString()
-  @Field(() => String)
-  password!: string;
-
-  @ApiProperty({
-    required: true,
   })
   @IsJSONValue()
   @Field(() => GraphQLJSON)

@@ -50,17 +50,6 @@ class UserWhereInput {
     nullable: true,
   })
   lastName?: StringNullableFilter;
-
-  @ApiProperty({
-    required: false,
-    type: StringFilter,
-  })
-  @Type(() => StringFilter)
-  @IsOptional()
-  @Field(() => StringFilter, {
-    nullable: true,
-  })
-  username?: StringFilter;
 }
 
 export { UserWhereInput as UserWhereInput };
