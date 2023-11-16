@@ -17,6 +17,7 @@ import { IsOptional, ValidateNested } from "class-validator";
 import { StringNullableFilter } from "../../util/StringNullableFilter";
 import { OrderListRelationFilter } from "../../order/base/OrderListRelationFilter";
 import { AddressWhereUniqueInput } from "../../address/base/AddressWhereUniqueInput";
+import { JsonFilter } from "../../util/JsonFilter";
 
 @InputType()
 class CustomerWhereInput {
@@ -98,6 +99,17 @@ class CustomerWhereInput {
     nullable: true,
   })
   address?: AddressWhereUniqueInput;
+
+  @ApiProperty({
+    required: false,
+    type: JsonFilter,
+  })
+  @Type(() => JsonFilter)
+  @IsOptional()
+  @Field(() => JsonFilter, {
+    nullable: true,
+  })
+  roles?: JsonFilter;
 }
 
 export { CustomerWhereInput as CustomerWhereInput };

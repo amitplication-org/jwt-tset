@@ -15,6 +15,9 @@ import { IsString, IsDate, IsOptional, ValidateNested } from "class-validator";
 import { Type } from "class-transformer";
 import { Order } from "../../order/base/Order";
 import { Address } from "../../address/base/Address";
+import { IsJSONValue } from "@app/custom-validators";
+import { GraphQLJSON } from "graphql-type-json";
+import { JsonValue } from "type-fest";
 
 @ObjectType()
 class Customer {
@@ -103,6 +106,16 @@ class Customer {
   @Type(() => Address)
   @IsOptional()
   address?: Address | null;
+
+  @ApiProperty({
+    required: false,
+  })
+  @IsJSONValue()
+  @IsOptional()
+  @Field(() => GraphQLJSON, {
+    nullable: true,
+  })
+  roles!: JsonValue;
 }
 
 export { Customer as Customer };

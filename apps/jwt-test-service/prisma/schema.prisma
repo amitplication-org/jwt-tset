@@ -14,8 +14,8 @@ model User {
   firstName String?
   lastName  String?
   roles     Json
-  username  String   @unique
-  password  String
+  username  String?  @unique
+  password  String?
 }
 
 model Order {
@@ -42,6 +42,7 @@ model Customer {
   orders    Order[]
   address   Address? @relation(fields: [addressId], references: [id])
   addressId String?
+  roles     Json?
 }
 
 model Address {

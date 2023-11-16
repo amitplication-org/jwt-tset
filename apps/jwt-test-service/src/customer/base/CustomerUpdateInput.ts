@@ -15,6 +15,9 @@ import { IsString, IsOptional, ValidateNested } from "class-validator";
 import { OrderUpdateManyWithoutCustomersInput } from "./OrderUpdateManyWithoutCustomersInput";
 import { Type } from "class-transformer";
 import { AddressWhereUniqueInput } from "../../address/base/AddressWhereUniqueInput";
+import { IsJSONValue } from "@app/custom-validators";
+import { GraphQLJSON } from "graphql-type-json";
+import { InputJsonValue } from "../../types";
 
 @InputType()
 class CustomerUpdateInput {
@@ -85,6 +88,16 @@ class CustomerUpdateInput {
     nullable: true,
   })
   address?: AddressWhereUniqueInput | null;
+
+  @ApiProperty({
+    required: false,
+  })
+  @IsJSONValue()
+  @IsOptional()
+  @Field(() => GraphQLJSON, {
+    nullable: true,
+  })
+  roles?: InputJsonValue;
 }
 
 export { CustomerUpdateInput as CustomerUpdateInput };

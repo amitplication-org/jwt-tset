@@ -238,6 +238,8 @@ export class AddressControllerBase {
             id: true,
           },
         },
+
+        roles: true,
       },
     });
     if (results === null) {
