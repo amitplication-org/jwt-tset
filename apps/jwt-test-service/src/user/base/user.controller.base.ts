@@ -55,7 +55,6 @@ export class UserControllerBase {
         updatedAt: true,
         firstName: true,
         lastName: true,
-        username: true,
         roles: true,
       },
     });
@@ -83,7 +82,6 @@ export class UserControllerBase {
         updatedAt: true,
         firstName: true,
         lastName: true,
-        username: true,
         roles: true,
       },
     });
@@ -112,7 +110,6 @@ export class UserControllerBase {
         updatedAt: true,
         firstName: true,
         lastName: true,
-        username: true,
         roles: true,
       },
     });
@@ -150,7 +147,6 @@ export class UserControllerBase {
           updatedAt: true,
           firstName: true,
           lastName: true,
-          username: true,
           roles: true,
         },
       });
@@ -187,7 +183,6 @@ export class UserControllerBase {
           updatedAt: true,
           firstName: true,
           lastName: true,
-          username: true,
           roles: true,
         },
       });
